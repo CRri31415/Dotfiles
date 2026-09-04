@@ -1,0 +1,3 @@
+(defsrc	caps ins)
+
+(deflayer default rctl caps)
