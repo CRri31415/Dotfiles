@@ -1,0 +1,17 @@
+[config]
+reload_apps = true
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland-template"
+output_path = "~/.config/hypr/colors.conf"
+post_hook = "hyprctl reload"
+
+[templates.waybar]
+input_path = "~/.config/matugen/templates/waybar-template"
+output_path = "~/.config/waybar/colors.css"
+post_hook = "pkill -USR2 waybar"
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty-colors.conf"
+output_path = "~/.config/kitty/colors.conf"
+post_hook = "kill -SIGUSR1 $(pgrep kitty)"
