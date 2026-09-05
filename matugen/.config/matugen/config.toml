@@ -2,12 +2,12 @@
 reload_apps = true
 
 [templates.hyprland]
-input_path = "~/.config/matugen/templates/hyprland-template"
+input_path = "~/.config/matugen/templates/hyprland-template.conf"
 output_path = "~/.config/hypr/colors.conf"
 post_hook = "hyprctl reload"
 
 [templates.waybar]
-input_path = "~/.config/matugen/templates/waybar-template"
+input_path = "~/.config/matugen/templates/waybar-template.css"
 output_path = "~/.config/waybar/colors.css"
 post_hook = "pkill -USR2 waybar"
 
