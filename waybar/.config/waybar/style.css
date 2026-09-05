@@ -39,6 +39,6 @@ window#waybar
 #workspaces button.active
 {
   color: @on_primary;
-  background_color: @primary;
+  background-color: @primary;
   border-radius: 4px;
 }
