@@ -25,8 +25,10 @@ local wallpapers_dir = home .. "/dotfiles/wallpapers/"
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
-  hl.exec_cmd("waybar & swww-daemon & mako")
-  hl.exec_cmd("swww img " .. wallpapers_dir .. "adipocere.png")
+  hl.exec_cmd("waybar")
+  hl.exec_cmd("mako")
+  hl.exec_cmd("awww-daemon")
+  hl.exec_cmd("sleep 0.5 && awww init && awww img " .. wallpapers_dir .. "adipocere.png")
 end)
 
 local colors = require("colors")
