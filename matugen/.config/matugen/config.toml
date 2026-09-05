@@ -12,6 +12,6 @@ output_path = "~/.config/waybar/colors.css"
 post_hook = "pkill -USR2 waybar"
 
 [templates.kitty]
-input_path = "~/.config/matugen/templates/kitty-colors.conf"
+input_path = "~/.config/matugen/templates/kitty-template.conf"
 output_path = "~/.config/kitty/colors.conf"
 post_hook = "kill -SIGUSR1 $(pgrep kitty)"
