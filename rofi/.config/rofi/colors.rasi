@@ -1,13 +1,13 @@
 *
 {
-	wallpaper-path: url("/home/user/dotfiles/wallpapers/Hippocampal-Pain.png", height);
-	primary: #dcb9f8;
-	on-primary: #3f2358;
-	secondary: #d1c1d9;
-	on-secondary: #372c3f;
-	surface: #151217;
-	on-surface: #e8e0e8;
-	tertiary: #f3b7bc;
-	on-tertiary: #4c252a;
-	outline: #968e98;
+	wallpaper-path: url("/home/user/dotfiles/wallpapers/adipocere.png", height);
+	primary: #ffb3b3;
+	on-primary: #561d21;
+	secondary: #e6bdbc;
+	on-secondary: #442929;
+	surface: #1a1111;
+	on-surface: #f0dede;
+	tertiary: #e5c18d;
+	on-tertiary: #422c05;
+	outline: #a08c8c;
 }

@@ -6,7 +6,7 @@
 
   "modules-left": ["hyprland/workspaces", "tray"],
   "modules-center": ["mpris", "clock", "privacy"],
-  "modules-right": ["pulseaudio", "battery", "network", "cpu", "memory", "idle_inhibitor"],
+  "modules-right": ["pulseaudio", "battery", "network", "cpu", "memory", "idle_inhibitor", "custom/power"],
 
   "hyprland/workspaces":
   {
@@ -124,5 +124,11 @@
     "format": "{capacity}%",
     "format-plugged": " {capacity}%",
     "format-charging": " {capacity}%"
+  },
+
+  "custom/power":
+  {
+    "format": "⚡",
+    "on-click": "wlogout -b 2 -L 400 -R 400"
   }
 }

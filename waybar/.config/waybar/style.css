@@ -27,7 +27,8 @@ window#waybar
 #privacy,
 #battery,
 #network,
-#mpris
+#mpris,
+#custom-power
 {
   background-color: @on_secondary;
   color: @on_surface;
