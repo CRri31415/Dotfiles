@@ -1,0 +1,12 @@
+*
+{
+	primary: #ffb3b3;
+	on-primary: #561d21;
+	secondary: #e6bdbc;
+	on-secondary: #442929;
+	surface: #1a1111;
+	on-surface: #f0dede;
+	tertiary: #e5c18d;
+	on-tertiary: #422c05;
+	outline: #a08c8c;
+}

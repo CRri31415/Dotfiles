@@ -1,0 +1,140 @@
+@import "colors.rasi"
+
+configuration
+{
+	modi: "window,run,drun,emoji";
+	display-window: "Windows";
+	display-run: "Run";
+	display-drun: "App";
+	display-emoji: "Emoji";
+	scroll-method: 1;
+	show-icons: true;
+	drun-display-format: "{icon} {name}";
+}
+
+*
+{
+	font: "JuliaMono Nerd Font 15";
+}
+
+#window
+{
+	background-color: @secondary;
+	border-color: @outline;
+	border: 2px solid;
+	border-radius: 16px;
+	width: 1000px;
+}
+
+#mainbox
+{
+	spacing: 0px;
+	background-color: transparent;
+	orientation: horizontal;
+	children: ["leftbox", "rightbox"];
+}
+
+#leftbox
+{
+	padding: 16px;
+	background-color: transparent;
+	background-image: url("~/dotfiles/current-wallpaper");
+	orientation: vertical;
+	children: ["search-bar", "dummy", "mode-switcher"];
+}
+
+#search-bar
+{
+	spacing: 8px;
+	padding: 8px;
+	border-radius: 8px;
+	background-color: @primary;
+	text-color: @on-surface;
+	expand: false;
+	children: ["search-icon", "entry"];
+}
+
+#search-icon
+{
+	expand: false;
+	background-color: inherit;
+	text-color: inherit;
+	str: "";
+}
+
+#entry
+{
+	background-color: inherit;
+	text-color: inherit;
+	placeholder: "Search";
+	cursor: text;
+}
+
+#dummy
+{
+	background-color: transparent;
+}
+
+#mode-switcher
+{
+	spacing: 16px;
+	background-color: transparent;
+	text-color: @primary;
+}
+button
+{
+	padding: 8px;
+	border-radius: 8px;
+	background-color: @on-primary;
+	text-color: inherit;
+}
+button selected
+{
+	background-color: @primary;
+	text-color: @secondary;
+}
+
+#rightbox
+{
+	padding: 16px;
+	background-color: transparent;
+	orientation: vertical;
+	children: ["message", "listview"];
+}
+
+#listview
+{
+	columns: 1;
+	lines: 12;
+	cycle: true;
+	dynamic: true;
+	scrollbar: false;
+	layout: vertical;
+	fixed-height: true;
+	fixed-columns: true;
+	spacing: 8px;
+	background-color: transparent;
+	text-color: @on-surface;
+	cursor: pointer;
+}
+
+#message
+{
+	background-color: transparent;
+}
+textbox
+{
+	padding: 8px;
+	border-radius: 8px;
+	horizontal-align: 0.0;
+	vertical-align: 0.5;
+	background-color: @on-primary;
+	text-color: @on-surface;
+}
+error-message
+{
+	padding: 8px;
+	border-radius: 8px;
+	background-color: @on-primary;
+	text-color: @on-surface;
+}

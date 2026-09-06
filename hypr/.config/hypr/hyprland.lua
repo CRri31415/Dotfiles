@@ -24,17 +24,20 @@ local menu = customScript .. "app-launcher.sh"
 local wallpaper_launcher = customScript .. "wallpaper.sh"
 local clipboard = customScript .. "clipboard.sh"
 local emoji = customScript .. "emoji.sh"
+local window_tab = customScript .. "window.sh"
+local run_menu = customScript .. "run-launcher.sh"
 
-local wallpapers_dir = home .. "/dotfiles/wallpapers/"
+local wallpaper_cache = home .. "/dotfiles/current-wallpaper"
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("ln -sf ~/dotfiles/wallpapers/adipocere.png ~/dotfiles/current-wallpaper")
   hl.exec_cmd("waybar")
   hl.exec_cmd("mako")
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("fcitx5 -d --replace")
-  hl.exec_cmd("sleep 0.5 && awww init && awww img " .. wallpapers_dir .. "adipocere.png")
-  hl.exec_cmd("matugen image " .. wallpapers_dir .. "adipocere.png --source-color-index 0")
+  hl.exec_cmd("sleep 0.5 && awww init && awww img " .. wallpaper_cache)
+  hl.exec_cmd("matugen image " .. wallpaper_cache .. " --source-color-index 0")
 end)
 
 local colors = require("colors")
@@ -163,7 +166,9 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + SLASH", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(run_menu))
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd(window_tab))
 hl.bind(mainMod .. " + PERIOD", hl.dsp.exec_cmd(emoji))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(wallpaper_launcher))
