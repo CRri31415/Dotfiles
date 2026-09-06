@@ -7,6 +7,10 @@ hl.monitor({
 
 local home = os.getenv("HOME")
 
+hl.env("XMODIFIERS","@im=fcitx")
+hl.env("QT_IM_MODULE","fcitx")
+hl.env("GTK_IM_MODULE","fcitx")
+
 -- For VMware
 hl.env("LIBGL_ALWAYS_SOFTWARE","1")
 
@@ -28,6 +32,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("waybar")
   hl.exec_cmd("mako")
   hl.exec_cmd("awww-daemon")
+  hl.exec_cmd("fcitx5 -d --replace")
   hl.exec_cmd("sleep 0.5 && awww init && awww img " .. wallpapers_dir .. "adipocere.png")
 end)
 
@@ -93,8 +98,8 @@ hl.animation({leaf = "global", enabled = true, speed = 10, bezier = "ease"})
 hl.animation({leaf = "windowsIn", enabled = true, speed = 4.5, bezier = "softPop", style = "popin 87%"})
 hl.animation({leaf = "windowsOut", enabled = true, speed = 1.5, bezier = "hardPop", style = "popin 87%"})
 hl.animation({leaf = "windows", enabled = true, speed = 3.5, bezier = "ease"})
-hl.animation({leaf = "fadeIn", enabled = true, speed = 1.5, bezier = "ease"})
-hl.animation({leaf = "fadeOut", enabled = true, speed = 1.5, bezier = "softPop"})
+hl.animation({leaf = "fadeIn", enabled = true, speed = 3.5, bezier = "hardPop"})
+hl.animation({leaf = "fadeOut", enabled = true, speed = 3.5, bezier = "softPop"})
 hl.animation({leaf = "layers", enabled = true, speed = 1.5, bezier = "hardPop"})
 hl.animation({leaf = "workspaces", enabled = true, speed = 1.5, bezier = "ease", style = "fade"})
 hl.animation({leaf = "zoomFactor", enabled = true, speed = 7, bezier = "hardPop"})

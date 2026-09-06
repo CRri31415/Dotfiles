@@ -1,3 +1,3 @@
-(defsrc	caps ins)
+(defsrc	caps ins ralt rctl)
 
-(deflayer default rctl caps)
+(deflayer default rctl caps f14 f13)
