@@ -19,15 +19,19 @@ configuration
 
 #window
 {
+	transparency: "real";
 	background-color: @on-primary;
 	border-color: @outline;
 	border: 2px solid;
 	border-radius: 16px;
+	spacing: 0px;
+	padding: 0px;
 	width: 1000px;
 }
 
 #mainbox
 {
+	background-image: @wallpaper-path;
 	spacing: 0px;
 	background-color: transparent;
 	orientation: horizontal;
@@ -38,7 +42,6 @@ configuration
 {
 	padding: 16px;
 	background-color: transparent;
-	background-image: url("~/dotfiles/current-wallpaper");
 	orientation: vertical;
 	children: ["search-bar", "dummy", "mode-switcher"];
 }
@@ -46,10 +49,10 @@ configuration
 #search-bar
 {
 	spacing: 8px;
-	padding: 8px;
+	padding: 10px 12px;
 	border-radius: 8px;
 	background-color: @primary;
-	text-color: @on-surface;
+	text-color: @surface;
 	expand: false;
 	children: ["search-icon", "entry"];
 }
@@ -68,6 +71,7 @@ configuration
 	text-color: inherit;
 	placeholder: "Search";
 	cursor: text;
+	vertical-align: 0.5;
 }
 
 #dummy
@@ -97,7 +101,7 @@ button selected
 #rightbox
 {
 	padding: 16px;
-	background-color: transparent;
+	background-color: @on-primary;
 	orientation: vertical;
 	children: ["message", "listview"];
 }
@@ -113,6 +117,8 @@ button selected
 	fixed-height: true;
 	fixed-columns: true;
 	spacing: 16px;
+	border-color: transparent;
+	border: 0px;
 	background-color: transparent;
 	text-color: @on-surface;
 	cursor: pointer;
@@ -176,6 +182,8 @@ element-text
 #message
 {
 	background-color: transparent;
+	border: 0px;
+	border-color: transparent;
 }
 textbox
 {
