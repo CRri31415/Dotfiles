@@ -19,7 +19,7 @@ configuration
 
 #window
 {
-	background-color: @secondary;
+	background-color: @on-primary;
 	border-color: @outline;
 	border: 2px solid;
 	border-radius: 16px;
@@ -85,13 +85,13 @@ button
 {
 	padding: 8px;
 	border-radius: 8px;
-	background-color: @on-primary;
+	background-color: @on-secondary;
 	text-color: inherit;
 }
 button selected
 {
-	background-color: @primary;
-	text-color: @secondary;
+	background-color: @secondary;
+	text-color: @on-primary;
 }
 
 #rightbox
@@ -105,7 +105,7 @@ button selected
 #listview
 {
 	columns: 1;
-	lines: 12;
+	lines: 8;
 	cycle: true;
 	dynamic: true;
 	scrollbar: false;
@@ -126,17 +126,20 @@ element
 	text-color: @on-surface;
 	cursor: pointer;
 }
-element normal.normal
+element normal.normal,
+element alternate.normal
 {
 	text-color: inherit;
 	background-color: inherit;
 }
-element normal.urgent
+element normal.urgent,
+element alternate.urgent
 {
 	text-color: inherit;
 	background-color: @tertiary;
 }
-element normal.active
+element normal.active,
+element alternate.active
 {
 	text-color: inherit;
 	background-color: @primary;
