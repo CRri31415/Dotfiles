@@ -31,13 +31,11 @@ local wallpaper_cache = home .. "/dotfiles/current-wallpaper"
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
-  hl.exec_cmd("ln -sf ~/dotfiles/wallpapers/adipocere.png ~/dotfiles/current-wallpaper")
   hl.exec_cmd("waybar")
   hl.exec_cmd("mako")
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("fcitx5 -d --replace")
-  hl.exec_cmd("sleep 0.5 && awww init && awww img " .. wallpaper_cache)
-  hl.exec_cmd("matugen image " .. wallpaper_cache .. " --source-color-index 0")
+  hl.exec_cmd("sleep 0.5 && " .. customScript .. "wallpaper-change.sh ~/dotfiles/wallpapers/adipocere.png")
 end)
 
 local colors = require("colors")

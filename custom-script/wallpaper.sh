@@ -3,7 +3,6 @@ if pidof rofi > /dev/null; then
 fi
 
 wallpaper_dir="$HOME/dotfiles/wallpapers"
-wallpaper_cache="$HOME/dotfiles/current-wallpaper"
 
 selected=$(for p in "$wallpaper_dir"/*; do
   echo -en "$(basename "${p%.*}")\0icon\x1f$p\n"
@@ -14,8 +13,5 @@ done | rofi -dmenu)
 selected_path=$(find "$wallpaper_dir" -type f -name "$selected.*" | head -n 1)
 
 if [ -n "$selected_path" ]; then
-  ln -sf "$selected_path" "$wallpaper_cache"
-  
-  awww img "$wallpaper_cache"
-  matugen image "$wallpaper_cache" --source-color-index 0
+  ./wallpaper-change.sh "$selected_path"
 fi
