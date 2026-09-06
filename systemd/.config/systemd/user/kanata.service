@@ -3,7 +3,7 @@ Description=Kanata Daemon
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/kanata --config %h/.config/kanata/kanata.kbd
+ExecStart=/usr/bin/kanata -c %h/.config/kanata/kanata.kbd
 Restart=always
 
 [Install]

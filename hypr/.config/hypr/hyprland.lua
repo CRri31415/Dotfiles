@@ -34,6 +34,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("fcitx5 -d --replace")
   hl.exec_cmd("sleep 0.5 && awww init && awww img " .. wallpapers_dir .. "adipocere.png")
+  hl.exec_cmd("matugen image " .. wallpapers_dir .. "adipocere.png --source-color-index 0")
 end)
 
 local colors = require("colors")
