@@ -27,8 +27,6 @@ local emoji = customScript .. "emoji.sh"
 local window_tab = customScript .. "window.sh"
 local run_menu = customScript .. "run-launcher.sh"
 
-local wallpaper_cache = home .. "/dotfiles/current-wallpaper"
-
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
   hl.exec_cmd("waybar")

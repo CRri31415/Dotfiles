@@ -1,10 +1,11 @@
 wallpaper_path="$1"
 
 if [ -z "$wallpaper_path" ]; then
-  exit 0
+  exit 1
 fi
 
 wallpaper_cache="/tmp/current-wallpaper"
+wallpaper_path="${wallpaper_path/#\~/$HOME}"
 
 if [ -f "$wallpaper_path" ]; then
   ln -sf "$wallpaper_path" "$wallpaper_cache"
