@@ -4,16 +4,25 @@
   "height": 32,
   "spacing": 4,
 
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray"],
+  "modules-left": ["hyprland/workspaces", "tray"],
+  "modules-center": ["mpris", "clock", "privacy"],
+  "modules-right": ["pulseaudio", "battery", "network", "cpu", "memory", "idle_inhibitor"],
 
   "hyprland/workspaces":
   {
     "disable-scroll": true,
     "all-outputs": true,
-    "format": "{name}",
-    "on-click": "activate"
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons" :
+    {
+      "1" : "A",
+      "2" : "B",
+      "3" : "C",
+      "4" : "D",
+      "5" : "E",
+      "active" : "@"
+    }
   },
 
   "clock":
@@ -26,23 +35,33 @@
   "pulseaudio":
   {
     "format": "{icon} {volume}",
-    "format-muted": "Muted",
+    "format-muted": "🔇 Muted",
     "format-icons":
     {
-      "default": [" "," "," "]
+      "default": ["🔈","🔉","🔊"]
     },
     "on-click": "pavucontrol"
   },
 
+  "network":
+  {
+    "format-wifi": "{icon}{essid]}",
+    "format-ethernet": " Ethernet",
+    "format-disconnected": "󰤮 Disconnected",
+    "format-linked": "󰤭 Connecting",
+    "format-icons": ["󰤠 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+    "interval": 5
+  },
+
   "cpu":
   {
-    "format": "{usage}%",
+    "format": "CPU {usage}%",
     "interval": 2
   },
 
   "memory":
   {
-    "format": "{percentage}%",
+    "format": "Memory {percentage}%",
     "interval": 2
   },
 
@@ -50,5 +69,60 @@
   {
     "icon-size": 16,
     "spacing": 10
+  },
+
+  "mpris":
+  {
+    "format": "⏸️ {title} - {artist}",
+    "format-paused": "▶️ <i>{title} - {artist}",
+    "max_length": 30
+  },
+
+  "idle_inhibitor":
+  {
+    "format": "{icon}",
+    "format-icons":
+    {
+      "activated": "💡",
+      "deactivated": "🛏️"
+    }
+  },
+
+  "privacy":
+  {
+    "icon-spacing": 8,
+    "icon-size": 16,
+    "transition_duration": 0.5,
+    "modules":
+    [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 16
+      },
+      {
+        "type": "media-record",
+        "tooltip": true,
+        "tooltip-icon-size": 16
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 16
+      }
+    ]
+  },
+
+  "battery":
+  {
+    "states":
+    {
+      "good" : 70,
+      "warning" : 50,
+      "critical" : 15
+    },
+    "format": "{capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-charging": " {capacity}%"
   }
 }

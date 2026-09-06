@@ -13,5 +13,5 @@ done | rofi -dmenu)
 selected_path=$(find "$wallpaper_dir" -type f -name "$selected.*" | head -n 1)
 
 if [ -n "$selected_path" ]; then
-  ./wallpaper-change.sh "$selected_path"
+  $HOME/dotfiles/custom-script/wallpaper-change.sh "$selected_path"
 fi

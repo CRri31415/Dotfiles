@@ -33,7 +33,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("mako")
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("fcitx5 -d --replace")
-  hl.exec_cmd("sleep 0.5 && " .. customScript .. "wallpaper-change.sh ~/dotfiles/wallpapers/adipocere.png")
+  hl.exec_cmd("sleep 0.5 && " .. customScript .. "wallpaper-random.sh")
 end)
 
 local colors = require("colors")
@@ -75,7 +75,7 @@ hl.config({
 
     blur = {
       enabled = true,
-      size = 3,
+      size = 4,
       passes = 2,
 
       xray = false,
@@ -98,8 +98,9 @@ hl.animation({leaf = "global", enabled = true, speed = 10, bezier = "ease"})
 hl.animation({leaf = "windowsIn", enabled = true, speed = 4.5, bezier = "softPop", style = "popin 87%"})
 hl.animation({leaf = "windowsOut", enabled = true, speed = 1.5, bezier = "hardPop", style = "popin 87%"})
 hl.animation({leaf = "windows", enabled = true, speed = 3.5, bezier = "ease"})
-hl.animation({leaf = "fadeIn", enabled = true, speed = 3.5, bezier = "hardPop"})
-hl.animation({leaf = "fadeOut", enabled = true, speed = 3.5, bezier = "softPop"})
+hl.animation({leaf = "fade", enabled = true, speed = 4.0, bezier = "ease"})
+hl.animation({leaf = "fadeIn", enabled = true, speed = 1.5, bezier = "ease"})
+hl.animation({leaf = "fadeOut", enabled = true, speed = 1.5, bezier = "ease"})
 hl.animation({leaf = "layers", enabled = true, speed = 1.5, bezier = "hardPop"})
 hl.animation({leaf = "workspaces", enabled = true, speed = 1.5, bezier = "ease", style = "fade"})
 hl.animation({leaf = "zoomFactor", enabled = true, speed = 7, bezier = "hardPop"})
@@ -186,8 +187,8 @@ for i = 1, 5 do
   hl.bind(mainMod .. " + " .. i, hl.dsp.window.move({workspace = i}))
 end
 
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({workspace = "e-1"}))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({workspace = "e+1"}))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({workspace = "e-1"}))
 
 hl.window_rule({
   name = "fix-xwayland-drag",
@@ -202,3 +203,7 @@ hl.window_rule({
 
   no_focus = true,
 })
+
+for i = 1, 5 do
+  hl.workspace_rule({workspace = i, persistent = true})
+end

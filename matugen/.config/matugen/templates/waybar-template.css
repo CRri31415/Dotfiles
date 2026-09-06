@@ -4,3 +4,5 @@
 @define-color on_surface {{colors.on_surface.default.hex}};
 @define-color surface_container {{colors.surface_container.default.hex}};
 @define-color outline {{colors.outline.default.hex}};
+@define-color secondary {{colors.secondary.default.hex}};
+@define-color on_secondary {{colors.on_secondary.default.hex}};
