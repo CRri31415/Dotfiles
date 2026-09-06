@@ -157,7 +157,7 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + SLASH", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + PERIOD", hl.dsp.exec_cmd(emoji))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(wallpaper_launcher))
@@ -179,8 +179,8 @@ for i = 1, 5 do
   hl.bind(mainMod .. " + " .. i, hl.dsp.window.move({workspace = i}))
 end
 
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({workspace = "e-1"}))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({workspace = "e-1"}))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({workspace = "e+1"}))
 
 hl.window_rule({
   name = "fix-xwayland-drag",
