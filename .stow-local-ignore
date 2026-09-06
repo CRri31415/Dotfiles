@@ -7,3 +7,7 @@
 ^.git
 
 ^custom-script
+
+^current-wallpaper$
+
+^LICENSE$

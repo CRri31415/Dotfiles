@@ -14,7 +14,7 @@ configuration
 
 *
 {
-	font: "JuliaMono Nerd Font 15";
+	font: "JuliaMono Nerd Font 13";
 }
 
 #window
@@ -112,10 +112,62 @@ button selected
 	layout: vertical;
 	fixed-height: true;
 	fixed-columns: true;
-	spacing: 8px;
+	spacing: 16px;
 	background-color: transparent;
 	text-color: @on-surface;
 	cursor: pointer;
+}
+element
+{
+	spacing: 8px;
+	padding: 4px;
+	border-radius: 8px;
+	background-color: transparent;
+	text-color: @on-surface;
+	cursor: pointer;
+}
+element normal.normal
+{
+	text-color: inherit;
+	background-color: inherit;
+}
+element normal.urgent
+{
+	text-color: inherit;
+	background-color: @tertiary;
+}
+element normal.active
+{
+	text-color: inherit;
+	background-color: @primary;
+}
+element selected.normal
+{
+	text-color: @on-secondary;
+	background-color: @primary;
+}
+element selected.urgent
+{
+	text-color: @on-secondary;
+	background-color: @tertiary;
+}
+element selected.active
+{
+	text-color: @on-secondary;
+	background-color: @tertiary;
+}
+element-icon
+{
+	background-color: transparent;
+	text-color: inherit;
+	size: 32px;
+}
+element-text
+{
+	background-color: transparent;
+	text-color: inherit;
+	vertical-align: 0.5;
+	horizontal-align: 0.0;
 }
 
 #message
