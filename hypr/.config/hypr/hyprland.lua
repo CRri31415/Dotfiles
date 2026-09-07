@@ -9,7 +9,7 @@ local home = os.getenv("HOME")
 
 hl.env("XMODIFIERS","@im=fcitx")
 hl.env("QT_IM_MODULE","fcitx")
-hl.env("GTK_IM_MODULE","fcitx")
+--hl.env("GTK_IM_MODULE","fcitx")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 
 -- For VMware
@@ -34,7 +34,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("mako")
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("fcitx5 -d --replace")
-  hl.exec_cmd("sleep 0.5 && " .. customScript .. "wallpaper-random.sh")
+  hl.exec_cmd("sleep 1 && " .. customScript .. "wallpaper-random.sh")
 end)
 
 local colors = require("colors")
