@@ -32,7 +32,7 @@ window#waybar
 {
   background-color: @on_secondary;
   color: @on_surface;
-  padding: 4px 6px;
+  padding: 4px 8px;
   margin: 4px 4px;
 }
 
@@ -52,11 +52,11 @@ window#waybar
 
 #cpu
 {
-  min-width: 65px;
+  min-width: 70px;
 }
 
 #memory
 {
-  min-width: 80px;
+  min-width: 90px;
 }
 
