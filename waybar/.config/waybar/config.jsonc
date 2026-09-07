@@ -50,18 +50,21 @@
     "format-disconnected": "󰤮 Disconnected",
     "format-linked": "󰤭 Connecting",
     "format-icons": ["󰤠 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+    "tooltip": false,
     "interval": 5
   },
 
   "cpu":
   {
     "format": "CPU {usage}%",
+    "tooltip": false,
     "interval": 2
   },
 
   "memory":
   {
     "format": "Memory {percentage}%",
+    "tooltip": false,
     "interval": 2
   },
 
@@ -85,7 +88,8 @@
     {
       "activated": "💡",
       "deactivated": "🛏️"
-    }
+    },
+    "tooltip": false
   },
 
   "privacy":
@@ -123,12 +127,14 @@
     },
     "format": "{capacity}%",
     "format-plugged": " {capacity}%",
-    "format-charging": " {capacity}%"
+    "format-charging": " {capacity}%",
+    "tooltip": false
   },
 
   "custom/power":
   {
     "format": "⚡",
-    "on-click": "wlogout -b 2 -L 400 -R 400"
+    "on-click": "wlogout -b 2 -L 400 -R 400",
+    "tooltip": false
   }
 }

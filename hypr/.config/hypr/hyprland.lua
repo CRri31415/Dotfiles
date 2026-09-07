@@ -10,6 +10,7 @@ local home = os.getenv("HOME")
 hl.env("XMODIFIERS","@im=fcitx")
 hl.env("QT_IM_MODULE","fcitx")
 hl.env("GTK_IM_MODULE","fcitx")
+hl.env("MOZ_ENABLE_WAYLAND", "1")
 
 -- For VMware
 hl.env("LIBGL_ALWAYS_SOFTWARE","1")
@@ -67,8 +68,8 @@ hl.config({
 
     shadow = {
       enabled = true,
-      range = 16,
-      render_power = 3,
+      range = 5,
+      render_power = 1,
 
       color = colors.shadow,
     },
@@ -77,7 +78,10 @@ hl.config({
       enabled = true,
       size = 4,
       passes = 2,
-
+      brightness = 1.3,
+      contrast = 1.05,
+      vibrancy = 0.1,
+      
       xray = false,
       ignore_opacity = true,
     },
@@ -88,6 +92,8 @@ hl.config({
     enabled = true,
   },
 })
+
+hl.layer_rule({match = {namespace = "logout_dialog"}, blur = true})
 
 hl.curve("ease", {type = "bezier", points = {{0.37, 0.06}, {0.5, 1.0}}})
 hl.curve("softPop", {type = "bezier", points = {{0.1, 0.6}, {0.2, 1.1}}})
@@ -186,6 +192,9 @@ for i = 1, 5 do
   hl.bind(mainMod .. " + " .. i, hl.dsp.focus({workspace = i}))
   hl.bind(mainMod .. " + " .. i, hl.dsp.window.move({workspace = i}))
 end
+
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), {mouse = true})
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), {mouse = true})
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({workspace = "e-1"}))
