@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 wallpaper_path="$1"
 
 if [ -z "$wallpaper_path" ]; then
