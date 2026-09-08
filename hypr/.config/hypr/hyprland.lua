@@ -108,7 +108,7 @@ hl.animation({leaf = "fade", enabled = true, speed = 4.0, bezier = "ease"})
 hl.animation({leaf = "fadeIn", enabled = true, speed = 1.5, bezier = "ease"})
 hl.animation({leaf = "fadeOut", enabled = true, speed = 1.5, bezier = "ease"})
 hl.animation({leaf = "layers", enabled = true, speed = 1.5, bezier = "hardPop"})
-hl.animation({leaf = "workspaces", enabled = true, speed = 1.5, bezier = "ease", style = "fade"})
+hl.animation({leaf = "workspaces", enabled = true, speed = 1.5, bezier = "ease", style = "slidefade"})
 hl.animation({leaf = "zoomFactor", enabled = true, speed = 7, bezier = "hardPop"})
 
 hl.config({
@@ -190,7 +190,7 @@ hl.bind(mainMod .. " + down", hl.dsp.focus({direction = "down"}))
 
 for i = 1, 5 do
   hl.bind(mainMod .. " + " .. i, hl.dsp.focus({workspace = i}))
-  hl.bind(mainMod .. " + " .. i, hl.dsp.window.move({workspace = i}))
+  hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({workspace = i}))
 end
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), {mouse = true})

@@ -9,14 +9,19 @@
 "ui.cursor.normal" = {bg = "background", fg = "{{colors.primary.default.hex}}"}
 "ui.cursor.insert" = {bg = "background", fg = "{{colors.secondary.default.hex}}"}
 "ui.cursor.select" = {bg = "background", fg = "{{colors.tertiary.default.hex}}"}
-"ui.cursorline.primary" = {bg = "{{colors.surface_container_high}}"}
+"ui.cursorline.primary" = {bg = "{{colors.surface_container_high.default.hex}}"}
 "ui.statusline" = {bg = "{{colors.surface_container.default.hex}}", fg = "{{colors.on_surface_variant.default.hex}}"}
 "ui.statusline.normal" = {bg = "{{colors.primary.default.hex}}", fg = "background"}
 "ui.statusline.insert" = {bg = "{{colors.secondary.default.hex}}", fg = "background"}
 "ui.statusline.select" = {bg = "{{colors.tertiary.default.hex}}", fg = "background"}
-
-
+"ui.popup" = {bg = "container_background", fg = "container_text_color"}
+"ui.window" = {fg = "{{colors.outline_variant.default.hex}}"}
+"ui.help" = {bg = "container_background", fg = "container_text_color"}
+"ui.text" = {fg = "container_text_color"}
+"ui.text.focus" = {fg = "{{colors.primary.default.hex}}"}
+"ui.selection" = {bg = "{{colors.surface_container_highest.default.hex}}"}
 
 [palette]
 background = "{{colors.surface.default.hex}}"
-
+container_background = "{{colors.surface_container.default.hex}}"
+container_text_color = "{{colors.on_surface.default.hex}}"

@@ -1,22 +1,27 @@
-"attribute" = "#f3b7bc"
-"keyword" = "#dcb9f8"
+"attribute" = "#b8c6ea"
+"keyword" = "#81d4dd"
 
 
 
 "ui.background" = {bg = "background"}
-"ui.background.separator" = {fg = "#968e98"}
-"ui.cursor" = {bg = "background", fg = "#dcb9f8"}
-"ui.cursor.normal" = {bg = "background", fg = "#dcb9f8"}
-"ui.cursor.insert" = {bg = "background", fg = "#d1c1d9"}
-"ui.cursor.select" = {bg = "background", fg = "#f3b7bc"}
-"ui.cursorline.primary" = {bg = "{"dark": Map({"color": Ident("#2C292EFF")}), "default": Map({"color": Ident("#2C292EFF")}), "light": Map({"color": Ident("#EEE6EDFF")})}"}
-"ui.statusline" = {bg = "#221e24", fg = "#cdc4ce"}
-"ui.statusline.normal" = {bg = "#dcb9f8", fg = "background"}
-"ui.statusline.insert" = {bg = "#d1c1d9", fg = "background"}
-"ui.statusline.select" = {bg = "#f3b7bc", fg = "background"}
-
-
+"ui.background.separator" = {fg = "#899294"}
+"ui.cursor" = {bg = "background", fg = "#81d4dd"}
+"ui.cursor.normal" = {bg = "background", fg = "#81d4dd"}
+"ui.cursor.insert" = {bg = "background", fg = "#b1cbce"}
+"ui.cursor.select" = {bg = "background", fg = "#b8c6ea"}
+"ui.cursorline.primary" = {bg = "#252b2c"}
+"ui.statusline" = {bg = "#1a2121", fg = "#bec8c9"}
+"ui.statusline.normal" = {bg = "#81d4dd", fg = "background"}
+"ui.statusline.insert" = {bg = "#b1cbce", fg = "background"}
+"ui.statusline.select" = {bg = "#b8c6ea", fg = "background"}
+"ui.popup" = {bg = "container_background", fg = "container_text_color"}
+"ui.window" = {fg = "#3f484a"}
+"ui.help" = {bg = "container_background", fg = "container_text_color"}
+"ui.text" = {fg = "container_text_color"}
+"ui.text.focus" = {fg = "#81d4dd"}
+"ui.selection" = {bg = "#303637"}
 
 [palette]
-background = "#151217"
-
+background = "#0e1415"
+container_background = "#1a2121"
+container_text_color = "#dee4e4"
