@@ -1,0 +1,22 @@
+"attribute" = "{{colors.tertiary.default.hex}}"
+"keyword" = "{{colors.primary.default.hex}}"
+
+
+
+"ui.background" = {bg = "background"}
+"ui.background.separator" = {fg = "{{colors.outline.default.hex}}"}
+"ui.cursor" = {bg = "background", fg = "{{colors.primary.default.hex}}"}
+"ui.cursor.normal" = {bg = "background", fg = "{{colors.primary.default.hex}}"}
+"ui.cursor.insert" = {bg = "background", fg = "{{colors.secondary.default.hex}}"}
+"ui.cursor.select" = {bg = "background", fg = "{{colors.tertiary.default.hex}}"}
+"ui.cursorline.primary" = {bg = "{{colors.surface_container_high}}"}
+"ui.statusline" = {bg = "{{colors.surface_container.default.hex}}", fg = "{{colors.on_surface_variant.default.hex}}"}
+"ui.statusline.normal" = {bg = "{{colors.primary.default.hex}}", fg = "background"}
+"ui.statusline.insert" = {bg = "{{colors.secondary.default.hex}}", fg = "background"}
+"ui.statusline.select" = {bg = "{{colors.tertiary.default.hex}}", fg = "background"}
+
+
+
+[palette]
+background = "{{colors.surface.default.hex}}"
+

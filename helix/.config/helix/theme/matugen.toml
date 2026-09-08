@@ -1,0 +1,22 @@
+"attribute" = "#f3b7bc"
+"keyword" = "#dcb9f8"
+
+
+
+"ui.background" = {bg = "background"}
+"ui.background.separator" = {fg = "#968e98"}
+"ui.cursor" = {bg = "background", fg = "#dcb9f8"}
+"ui.cursor.normal" = {bg = "background", fg = "#dcb9f8"}
+"ui.cursor.insert" = {bg = "background", fg = "#d1c1d9"}
+"ui.cursor.select" = {bg = "background", fg = "#f3b7bc"}
+"ui.cursorline.primary" = {bg = "{"dark": Map({"color": Ident("#2C292EFF")}), "default": Map({"color": Ident("#2C292EFF")}), "light": Map({"color": Ident("#EEE6EDFF")})}"}
+"ui.statusline" = {bg = "#221e24", fg = "#cdc4ce"}
+"ui.statusline.normal" = {bg = "#dcb9f8", fg = "background"}
+"ui.statusline.insert" = {bg = "#d1c1d9", fg = "background"}
+"ui.statusline.select" = {bg = "#f3b7bc", fg = "background"}
+
+
+
+[palette]
+background = "#151217"
+

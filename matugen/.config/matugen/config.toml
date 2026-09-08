@@ -19,3 +19,8 @@ post_hook = "kill -SIGUSR1 $(pgrep kitty)"
 [templates.rofi]
 input_path = "~/.config/matugen/templates/rofi-template.rasi"
 output_path = "~/.config/rofi/colors.rasi"
+
+[templates.helix]
+input_path = "~/.config/matugen/templates/helix-template.toml"
+output_path = "~/.config/helix/theme/matugen.toml"
+

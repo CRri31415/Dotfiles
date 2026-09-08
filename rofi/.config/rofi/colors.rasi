@@ -1,13 +1,13 @@
 *
 {
-	wallpaper-path: url("/home/user/dotfiles/wallpapers/kedr.png", height);
-	primary: #92cef6;
-	on-primary: #00344c;
-	secondary: #b6c9d8;
-	on-secondary: #21323e;
-	surface: #101417;
-	on-surface: #dfe3e7;
-	tertiary: #ccc0e9;
-	on-tertiary: #342b4b;
-	outline: #8b9198;
+	wallpaper-path: url("/home/user/dotfiles/wallpapers/Hippocampal-Pain.png", height);
+	primary: #dcb9f8;
+	on-primary: #3f2358;
+	secondary: #d1c1d9;
+	on-secondary: #372c3f;
+	surface: #151217;
+	on-surface: #e8e0e8;
+	tertiary: #f3b7bc;
+	on-tertiary: #4c252a;
+	outline: #968e98;
 }
