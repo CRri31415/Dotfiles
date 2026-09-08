@@ -1,6 +1,25 @@
-"attribute" = "{{colors.tertiary.default.hex}}"
-"keyword" = "{{colors.primary.default.hex}}"
+[palette]
+background = "{{colors.surface.default.hex}}"
+container_background = "{{colors.surface_container.default.hex}}"
+container_text_color = "{{colors.on_surface.default.hex}}"
 
+
+"attribute" = "{{colors.tertiary.default.hex}}"
+"keyword" = {fg = "{{colors.primary.default.hex}}", modifiers = ["bold"]}
+"keyword.directive" = "{{colors.secondary.default.hex}}"
+"namespace" = "{{colors.secondary.default.hex}}"
+"punct" = "{{colors.on_surface_variant.default.hex}}"
+"string" = "{{colors.tertiary.default.hex}}"
+"type" = "{{colors.secondary.default.hex}}"
+"variable" = "{{colors.on_surface.default.hex}}"
+"variable.builtin" = "{{colors.secondary.default.hex}}"
+"variable.other.member" = "{{colors.primary.default.hex}}"
+"constant" = "{{colors.tertiary.default.hex}}"
+"comment" = {fg = "{{colors.outline.default.hex}}", modifiers = ["italic"]}
+"markup.heading" = {fg = "{{colors.primary.default.hex}}", modifiers = ["bold"]}
+"markup.bold" = {modifiers = ["bold"]}
+"markup.italic" = {modifiers = ["italic"]}
+"markup.link.url" = {fg = "{{colors.primary.default.hex}}", modifiers = ["underline"]}
 
 
 "ui.background" = {bg = "background"}
@@ -20,8 +39,3 @@
 "ui.text" = {fg = "container_text_color"}
 "ui.text.focus" = {fg = "{{colors.primary.default.hex}}"}
 "ui.selection" = {bg = "{{colors.surface_container_highest.default.hex}}"}
-
-[palette]
-background = "{{colors.surface.default.hex}}"
-container_background = "{{colors.surface_container.default.hex}}"
-container_text_color = "{{colors.on_surface.default.hex}}"

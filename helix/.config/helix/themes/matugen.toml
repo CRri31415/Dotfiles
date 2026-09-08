@@ -1,0 +1,41 @@
+[palette]
+background = "#111318"
+container_background = "#1e1f25"
+container_text_color = "#e2e2e9"
+
+
+"attribute" = "#debcdf"
+"keyword" = {fg = "#adc6ff", modifiers = ["bold"]}
+"keyword.directive" = "#bfc6dc"
+"namespace" = "#bfc6dc"
+"punct" = "#c4c6d0"
+"string" = "#debcdf"
+"type" = "#bfc6dc"
+"variable" = "#e2e2e9"
+"variable.builtin" = "#bfc6dc"
+"variable.other.member" = "#adc6ff"
+"constant" = "#debcdf"
+"comment" = {fg = "#8e9099", modifiers = ["italic"]}
+"markup.heading" = {fg = "#adc6ff", modifiers = ["bold"]}
+"markup.bold" = {modifiers = ["bold"]}
+"markup.italic" = {modifiers = ["italic"]}
+"markup.link.url" = {fg = "#adc6ff", modifiers = ["underline"]}
+
+
+"ui.background" = {bg = "background"}
+"ui.background.separator" = {fg = "#8e9099"}
+"ui.cursor" = {bg = "background", fg = "#adc6ff"}
+"ui.cursor.normal" = {bg = "background", fg = "#adc6ff"}
+"ui.cursor.insert" = {bg = "background", fg = "#bfc6dc"}
+"ui.cursor.select" = {bg = "background", fg = "#debcdf"}
+"ui.cursorline.primary" = {bg = "#282a2f"}
+"ui.statusline" = {bg = "#1e1f25", fg = "#c4c6d0"}
+"ui.statusline.normal" = {bg = "#adc6ff", fg = "background"}
+"ui.statusline.insert" = {bg = "#bfc6dc", fg = "background"}
+"ui.statusline.select" = {bg = "#debcdf", fg = "background"}
+"ui.popup" = {bg = "container_background", fg = "container_text_color"}
+"ui.window" = {fg = "#44474f"}
+"ui.help" = {bg = "container_background", fg = "container_text_color"}
+"ui.text" = {fg = "container_text_color"}
+"ui.text.focus" = {fg = "#adc6ff"}
+"ui.selection" = {bg = "#33353a"}
