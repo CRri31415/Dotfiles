@@ -1,41 +1,121 @@
+# Based on Helix Jellybeans theme(MPL-2.0)
+
+"attribute" = "capriccioso"
+"type" = "brillante"
+"type.enum.variant" = "giocoso"
+"constructor" = "cantabile"
+"constant" = "distinto"
+
+"constant.builtin.boolean" = "cantabile"
+"constant.character" = "cantabile"
+"constant.character.escape" = "stretto"
+"constant.numeric" = "distinto"
+"string" = "comodo"
+"string.regexp" = "leggiero"
+"string.special" = { fg = "cantabile", modifiers = ["underlined"] }
+"comment" = "liberamente"
+
+"variable" = "innocente"
+"variable.builtin" = { fg = "comodo", modifiers = ["underlined"] }
+"variable.parameter" = "cantabile"
+"variable.other.member" = "leggiero"
+"label" = "cantabile"
+"punctuation" = "marcato"
+"keyword" = "marcato"
+"keyword.control.exception" = "giocoso"
+"operator" = "leggiero"
+"function" = "cantabile"
+"function.macro" = "capriccioso"
+"function.builtin" = "capriccioso"
+"function.special" = "capriccioso"
+"function.method" = "cantabile"
+"tag" = "brillante"
+"special" = "capriccioso"
+"namespace" = "leggiero"
+
+"markup.bold" = { fg = "liberamente", modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.heading" = { fg = "marcato", modifiers = ["bold"] }
+"markup.list" = "comodo"
+"markup.list.numbered" = "marcato"
+"markup.list.unnumbered" = "marcato"
+"markup.link.url" = { fg = "comodo", modifiers = ['italic', 'underlined'] }
+"markup.link.text" = "marcato"
+"markup.link.label" = "giocoso"
+"markup.quote" = "comodo"
+"markup.raw" = "comodo"
+"markup.raw.inline" = "marcato"
+"markup.raw.block" = "comodo"
+
+"diff.plus" = "dolce"
+"diff.minus" = "feroce"
+"diff.delta" = "delicato"
+
+"ui.background" = { bg = "tranquillo" }
+"ui.cursor" = { bg = "tranquillo", modifiers = ["reversed"] }
+"ui.cursor.insert" = { bg = "innocente", fg = "tranquillo" }
+"ui.cursor.match" = { fg = "tranquillo", bg = "distinto" }
+"ui.cursorline" = { bg = "grandioso" }
+"ui.linenr" = "liberamente"
+"ui.linenr.selected" = { fg = "innocente", bg = "grandioso" }
+"ui.statusline" = { fg = "innocente", bg = "grandioso" }
+"ui.statusline.inactive" = { fg = "nobile", bg = "grandioso" }
+"ui.statusline.normal" = { fg = "innocente", bg = "grandioso" }
+"ui.statusline.insert" = { fg = "grandioso", bg = "giocoso" }
+"ui.statusline.select" = { fg = "generoso", bg = "elegante" }
+"ui.popup" = { fg = "innocente", bg = "pesante" }
+"ui.window" = { fg = "nobile", bg = "pesante" }
+"ui.help" = { fg = "innocente", bg = "pesante" }
+"ui.text" = "innocente"
+"ui.text.focus" = { fg = "liberamente", bg = "misterioso" }
+"ui.virtual" = "nobile"
+"ui.virtual.ruler" = { bg = "grandioso" }
+"ui.menu" = { fg = "leggiero", bg = "pesante" }
+"ui.menu.selected" = { fg = "liberamente", bg = "misterioso" }
+"ui.selection" = { bg = "grandioso" }
+"ui.selection.primary" = { bg = "elegante", fg = "generoso" }
+"hint" = "declamando"
+"info" = "cantando"
+"warning" = "martellato"
+"error" = "stretto"
+"diagnostic" = { modifiers = [] }
+"diagnostic.hint" = { underline = { color = "leggiero", style = "line" } }
+"diagnostic.info" = { underline = { color = "delicato", style = "line" } }
+"diagnostic.warning" = { underline = { color = "cantando", style = "line" } }
+"diagnostic.error" = { underline = { color = "stretto", style = "line" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
 [palette]
-background = "{{colors.surface.default.hex}}"
-container_background = "{{colors.surface_container.default.hex}}"
-container_text_color = "{{colors.on_surface.default.hex}}"
+tranquillo = "{{colors.surface_dim.default.hex}}"
+pesante = "{{colors.surface.default.hex}}"
+grandioso = "{{colors.surface_bright.default.hex}}"
+nobile = "{{colors.surface_container_high.default.hex}}"
+liberamente = "{{colors.surface_container_highest.default.hex}}"
 
+giocoso = "{{colors.secondary_fixed_dim.default.hex}}"
+leggiero = "{{colors.on_secondary_container.default.hex}}"
 
-"attribute" = "{{colors.tertiary.default.hex}}"
-"keyword" = {fg = "{{colors.primary.default.hex}}", modifiers = ["bold"]}
-"keyword.directive" = "{{colors.secondary.default.hex}}"
-"namespace" = "{{colors.secondary.default.hex}}"
-"punct" = "{{colors.on_surface_variant.default.hex}}"
-"string" = "{{colors.tertiary.default.hex}}"
-"type" = "{{colors.secondary.default.hex}}"
-"variable" = "{{colors.on_surface.default.hex}}"
-"variable.builtin" = "{{colors.secondary.default.hex}}"
-"variable.other.member" = "{{colors.primary.default.hex}}"
-"constant" = "{{colors.tertiary.default.hex}}"
-"comment" = {fg = "{{colors.outline.default.hex}}", modifiers = ["italic"]}
-"markup.heading" = {fg = "{{colors.primary.default.hex}}", modifiers = ["bold"]}
-"markup.bold" = {modifiers = ["bold"]}
-"markup.italic" = {modifiers = ["italic"]}
-"markup.link.url" = {fg = "{{colors.primary.default.hex}}", modifiers = ["underline"]}
+declamando = "{{colors.primary_container.default.hex}}"
+brillante= "{{colors.on_primary_container.default.hex}}"
+marcato = "{{colors.primary_fixed_dim.default.hex}}"
+misterioso = "{{colors.on_primary.default.hex}}"
+delicato = "{{colors.primary.default.hex}}"
 
+capriccioso = "{{colors.tertiary_fixed.default.hex}}"
+comodo = "{{colors.on_tertiary_container.default.hex}}"
 
-"ui.background" = {bg = "background"}
-"ui.background.separator" = {fg = "{{colors.outline.default.hex}}"}
-"ui.cursor" = {bg = "background", fg = "{{colors.primary.default.hex}}"}
-"ui.cursor.normal" = {bg = "background", fg = "{{colors.primary.default.hex}}"}
-"ui.cursor.insert" = {bg = "background", fg = "{{colors.secondary.default.hex}}"}
-"ui.cursor.select" = {bg = "background", fg = "{{colors.tertiary.default.hex}}"}
-"ui.cursorline.primary" = {bg = "{{colors.surface_container_high.default.hex}}"}
-"ui.statusline" = {bg = "{{colors.surface_container.default.hex}}", fg = "{{colors.on_surface_variant.default.hex}}"}
-"ui.statusline.normal" = {bg = "{{colors.primary.default.hex}}", fg = "background"}
-"ui.statusline.insert" = {bg = "{{colors.secondary.default.hex}}", fg = "background"}
-"ui.statusline.select" = {bg = "{{colors.tertiary.default.hex}}", fg = "background"}
-"ui.popup" = {bg = "container_background", fg = "container_text_color"}
-"ui.window" = {fg = "{{colors.outline_variant.default.hex}}"}
-"ui.help" = {bg = "container_background", fg = "container_text_color"}
-"ui.text" = {fg = "container_text_color"}
-"ui.text.focus" = {fg = "{{colors.primary.default.hex}}"}
-"ui.selection" = {bg = "{{colors.surface_container_highest.default.hex}}"}
+stretto = "{{colors.on_error.default.hex}}"
+feroce = "{{colors.error.default.hex}}"
+
+distinto = "{{colors.secondary.default.hex}}"
+martellato = "{{colors.tertiary_fixed_dim.default.hex}}"
+
+cantabile = "{{colors.tertiary.default.hex}}"
+innocente = "{{colors.on_tertiary_container.default.hex}}"
+cantando = "{{colors.on_secondary_fixed_variant.default.hex}}"
+
+dolce = "{{colors.secondary_container.default.hex}}"
+elegante = "{{colors.outline_variant.default.hex}}"
+generoso = "{{colors.outline.default.hex}}"

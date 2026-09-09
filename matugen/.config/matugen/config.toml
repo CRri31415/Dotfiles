@@ -21,6 +21,6 @@ input_path = "~/.config/matugen/templates/rofi-template.rasi"
 output_path = "~/.config/rofi/colors.rasi"
 
 [templates.helix]
-input_path = "~/.config/matugen/templates/helix-template.toml"
+input_path = "~/.config/matugen/templates/helix-kanagawa.toml"
 output_path = "~/.config/helix/themes/matugen.toml"
 

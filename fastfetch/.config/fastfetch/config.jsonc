@@ -9,7 +9,7 @@
     "title",
     "separator",
     "os",
-    "bios",
+    "host",
     "bootmgr",
     "kernel",
     "uptime",
@@ -24,6 +24,7 @@
     "memory",
     "swap",
     "disk",
+    "break",
     "colors"
   ]
 }

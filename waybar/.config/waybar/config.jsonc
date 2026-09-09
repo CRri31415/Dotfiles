@@ -4,8 +4,8 @@
   "height": 32,
   "spacing": 4,
 
-  "modules-left": ["hyprland/workspaces", "tray"],
-  "modules-center": ["mpris", "clock", "privacy"],
+  "modules-left": ["clock", "hyprland/workspaces", "tray"],
+  "modules-center": ["mpris", "privacy"],
   "modules-right": ["pulseaudio", "battery", "network", "cpu", "memory", "idle_inhibitor", "custom/power"],
 
   "hyprland/workspaces":
@@ -78,7 +78,8 @@
   {
     "format": "⏸️ {title} - {artist}",
     "format-paused": "▶️ <i>{title} - {artist}",
-    "max_length": 30
+    "max_length": 30,
+    "elipsis": "..."
   },
 
   "idle_inhibitor":
