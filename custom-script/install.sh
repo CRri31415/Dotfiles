@@ -10,6 +10,8 @@ pacman_pkgs=(
   stow openssh tree base-devel
 
   pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber pavucontrol
+
+  bluez bluez-utils
 )
 
 sudo pacman -S "${pacman_pkgs[@]}"
