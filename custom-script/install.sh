@@ -43,6 +43,6 @@ yay_pkgs=(
 
 yay -S "${yay_pkgs[@]}"
 
-pause
+read
 
 
