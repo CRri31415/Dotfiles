@@ -12,6 +12,10 @@ hl.env("QT_IM_MODULE","fcitx")
 --hl.env("GTK_IM_MODULE","fcitx")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 
+-- hl.env("HYPRCURSOR_THEME", "Tachyon")
+-- hl.env("HYPRCURSOR_SIZE", "32")
+
+
 -- For VMware
 hl.env("LIBGL_ALWAYS_SOFTWARE","1")
 

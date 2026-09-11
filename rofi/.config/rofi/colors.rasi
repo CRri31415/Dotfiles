@@ -1,13 +1,13 @@
 *
 {
-	wallpaper-path: url("/home/user/dotfiles/wallpapers/KakaoTalk_20260908_000710063_26.jpg", height);
-	primary: #cacb77;
-	on-primary: #313300;
-	secondary: #c9c8a5;
-	on-secondary: #313219;
-	surface: #14140c;
-	on-surface: #e6e3d6;
-	tertiary: #a4d0be;
-	on-tertiary: #0a372b;
-	outline: #939182;
+	wallpaper-path: url("/home/user/dotfiles/wallpapers/KakaoTalk_20260908_000710063_09.jpg", height);
+	primary: #81d4dc;
+	on-primary: #00363b;
+	secondary: #b1cbce;
+	on-secondary: #1c3437;
+	surface: #0e1415;
+	on-surface: #dee4e4;
+	tertiary: #b8c6ea;
+	on-tertiary: #21304c;
+	outline: #899294;
 }
