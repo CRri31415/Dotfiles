@@ -4,7 +4,7 @@
   "height": 32,
   "spacing": 4,
 
-  "modules-left": ["clock", "hyprland/workspaces", "tray"],
+  "modules-left": ["clock", "hyprland/workspaces", "custom/maxtemp", "tray"],
   "modules-center": ["mpris", "privacy"],
   "modules-right": ["pulseaudio", "battery", "network", "cpu", "memory", "idle_inhibitor", "custom/power"],
 
@@ -137,5 +137,12 @@
     "format": "⚡",
     "on-click": "wlogout -b 2 -L 400 -R 400",
     "tooltip": false
+  },
+
+  "custom/maxtemp":
+  {
+    "exec": "~/dotfiles/custom-script/max_temp.sh",
+    "return-type": "json",
+    "interval": 2
   }
 }

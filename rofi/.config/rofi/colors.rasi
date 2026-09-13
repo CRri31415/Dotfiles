@@ -1,13 +1,13 @@
 *
 {
-	wallpaper-path: url("/home/user/dotfiles/wallpapers/Hippocampal-Pain.png", height);
-	primary: #dcb9f8;
-	on-primary: #3f2358;
-	secondary: #d1c1d9;
-	on-secondary: #372c3f;
-	surface: #151217;
-	on-surface: #e8e0e8;
-	tertiary: #f3b7bc;
-	on-tertiary: #4c252a;
-	outline: #968e98;
+	wallpaper-path: url("/home/user/dotfiles/wallpapers/KakaoTalk_20260908_000710063_14.jpg", height);
+	primary: #c4cd7b;
+	on-primary: #2e3300;
+	secondary: #c7c9a6;
+	on-secondary: #30321a;
+	surface: #13140d;
+	on-surface: #e5e3d6;
+	tertiary: #a2d0c1;
+	on-tertiary: #07372d;
+	outline: #929282;
 }

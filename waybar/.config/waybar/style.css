@@ -29,7 +29,8 @@ window#waybar
 #battery,
 #network,
 #mpris,
-#custom-power
+#custom-power,
+#custom-maxtemp
 {
   background-color: @on_secondary;
   color: @on_surface;
