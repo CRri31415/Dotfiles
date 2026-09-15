@@ -77,7 +77,7 @@ hl.config({
 
     shadow = {
       enabled = true,
-      range = 5,
+      range = 2,
       render_power = 1,
 
       color = colors.shadow,
@@ -190,7 +190,7 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 hl.bind(mainMod .. " + F", hl.dsp.window.float({action = "toggle"}))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + S", hl.dsp.window.pseudo())
 
 hl.bind(mainMod .. " + left", hl.dsp.focus({direction = "left"}))
 hl.bind(mainMod .. " + right", hl.dsp.focus({direction = "right"}))
@@ -201,6 +201,9 @@ for i = 1, 5 do
   hl.bind(mainMod .. " + " .. i, hl.dsp.focus({workspace = i}))
   hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({workspace = i}))
 end
+
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("slurp | grim -g - - | wl-copy"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("wl-paste"))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), {mouse = true})
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), {mouse = true})
