@@ -21,7 +21,7 @@
       "3" : "C",
       "4" : "D",
       "5" : "E",
-      "active" : "@"
+      "6" : "H"
     }
   },
 
@@ -45,7 +45,7 @@
 
   "network":
   {
-    "format-wifi": "{icon}{essid]}",
+    "format-wifi": "{icon}{essid}",
     "format-ethernet": " Ethernet",
     "format-disconnected": "󰤮 Disconnected",
     "format-linked": "󰤭 Connecting",

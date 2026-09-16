@@ -3,6 +3,7 @@ theme = "matugen"
 [editor]
 line-number = "relative"
 cursorline = true
+completion-trigger-len = 0
 
 [editor.file-picker]
 hidden = false

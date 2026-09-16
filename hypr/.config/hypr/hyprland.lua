@@ -202,7 +202,9 @@ for i = 1, 5 do
   hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({workspace = i}))
 end
 
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("slurp | grim -g - - | wl-copy"))
+hl.bind(mainMod .. " + SHIFT + 6", hl.dsp.window.move({workspace = 6}))
+
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("slurp | grim -g - - | tee ~/main/04_개인/01_미디어/99_기타/00_스크린샷/$(date +%s).png | wl-copy"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("wl-paste"))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), {mouse = true})
@@ -228,3 +230,5 @@ hl.window_rule({
 for i = 1, 5 do
   hl.workspace_rule({workspace = i, persistent = true})
 end
+
+hl.workspace_rule({workspace = 6, persistent = false, monitor = "HDMI-A-1"})

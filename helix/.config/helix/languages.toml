@@ -1,0 +1,35 @@
+[[language]]
+name = "c"
+scope = "source.c"
+file-types = ["c", "h"]
+language-servers = ["clangd"]
+
+[language-server.clangd]
+command = "clangd"
+args = ["--header-insertion=never", "--fallback-style=none"]
+
+[[language]]
+name = "python"
+scope = "source.python"
+file-types = ["py"]
+language-servers = ["ruff"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "haskell"
+scope = "source.haskell"
+file-types = ["hs"]
+language-servers = ["haskell-language-server"]
+
+[[language-server.haskell-language-server]]
+command = "/home/user/.ghcup/bin/haskell-language-server-wrapper-2.14.0.0"
+args = ["--lsp"]
+
+[[language]]
+name = "julia"
+scope = "source.julia"
+file-types = ["jl"]
+language-servers = ["julia-lsp"]
