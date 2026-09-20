@@ -5,7 +5,7 @@
   "spacing": 4,
 
   "modules-left": ["clock", "hyprland/workspaces", "custom/maxtemp", "tray"],
-  "modules-center": ["mpris", "privacy"],
+  "modules-center": ["custom/player", "privacy"],
   "modules-right": ["pulseaudio", "battery", "network", "cpu", "memory", "idle_inhibitor", "custom/power"],
 
   "hyprland/workspaces":
@@ -74,12 +74,13 @@
     "spacing": 10
   },
 
-  "mpris":
+  "custom/player":
   {
-    "format": "⏸️ {title} - {artist}",
-    "format-paused": "▶️ <i>{title} - {artist}",
-    "max_length": 30,
-    "elipsis": "..."
+    "format": "{}",
+    "return-type": "json",
+    "max-length": 30,
+    "escape": true,
+    "exec": "$HOME/dotfiles/custom-script/playerctl.sh 2> /dev/null"
   },
 
   "idle_inhibitor":

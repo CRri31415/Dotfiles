@@ -33,3 +33,21 @@ name = "julia"
 scope = "source.julia"
 file-types = ["jl"]
 language-servers = ["julia-lsp"]
+
+[[language]]
+name = "latex"
+scope = "source.tex"
+injection-regex = "tex"
+file-types = ["tex", "bib"]
+roots = [".git", "Latexmkfile", "texlabroot"]
+language-servers = [ "texlab" ]
+
+[language-server.texlab]
+command = "texlab"
+
+[language-server.texlab.config.texlab]
+build.onSave = true
+build.executable = "latexmk"
+build.args = ["-pdflua", "-interaction=nonstopmode", "-synctex=1", "%f"]
+forwardSearch.executable = "zathura"
+forwardSearch.args = ["--synctex-forward", "%l:%c:%f", "%p"]

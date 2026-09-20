@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=KakaoTalk
+Comment=Run KakaoTalk via Bottles
+Exec=flatpak run --command=bottles-cli com.usebottles.bottles run -b "Default" -p "KakaoTalk"
+Icon=chat
+Terminal=false
+Type=Application
+Categories=Network;InstantMessaging;
