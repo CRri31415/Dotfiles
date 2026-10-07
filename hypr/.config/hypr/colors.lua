@@ -1,10 +1,10 @@
 local M = {
-	primary = "#a4c9fe",
+	primary = "#88d1ec",
 	shadow = "#000000",
-	outline = "#8d9199",
-	outline_variant = "#43474e",
-	surface = "#111318",
-	on_primary = "#00315d",
+	outline = "#8a9296",
+	outline_variant = "#40484c",
+	surface = "#0f1416",
+	on_primary = "#003543",
 }
 
 return M

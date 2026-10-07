@@ -9,7 +9,7 @@ Item{
         stackLayout.currentIndex = 0
     }
 
-    implicitWidth: 300
+    implicitWidth: 400
     implicitHeight: 150
     
     StackLayout {

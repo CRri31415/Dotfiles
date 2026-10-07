@@ -13,7 +13,7 @@ PanelWindow{
     }
     implicitHeight: isExpanded ? 300 : 40
     color: "transparent"
-
+    
     WlrLayershell.layer: WlrLayer.Top
     exclusionMode: ExclusionMode.Ignore
 
@@ -21,6 +21,7 @@ PanelWindow{
 
     TapHandler{
         enabled: root.isExpanded
+        gesturePolicy: TapHandler.DragThreshold
         onTapped: {
             root.isExpanded = false
             expandedContent.resetMain()
@@ -46,27 +47,30 @@ PanelWindow{
         Behavior on implicitWidth {NumberAnimation {duration: 250; easing.type: Easing.OutCubic}}
         Behavior on implicitHeight {NumberAnimation {duration: 250; easing.type: Easing.OutCubic}}
         Behavior on radius {NumberAnimation {duration: 250; easing.type: Easing.OutCubic}}
-
+       
         RowLayout{
             id: collapsedLayout
             anchors.centerIn: parent
             spacing: 5
             visible: !root.isExpanded
-            opacity: !root.isExpanded ? 1 : 0
 
             ClockWidget {}
         }
 
         TapHandler{
-            enabled: !root.isExpanded
-            onTapped: root.isExpanded = true
+            gesturePolicy: TapHandler.WithinBounds
+            
+            onTapped: {
+                if (!root.isExpanded) {
+                    root.isExpanded = true
+                }
+            }
         }
 
         ExpandedContent{
             id: expandedContent
             anchors.fill: parent
             visible: root.isExpanded
-            opacity: root.isExpanded ? 0.9 : 0
             
         }
     }
