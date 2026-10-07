@@ -24,3 +24,6 @@ output_path = "~/.config/rofi/colors.rasi"
 input_path = "~/.config/matugen/templates/helix-kanagawa.toml"
 output_path = "~/.config/helix/themes/matugen.toml"
 
+[templates.quickshell]
+input_path = "~/.config/matugen/templates/quickshell-template.qml"
+output_path = "~/.config/quickshell/colors.qml"
