@@ -8,4 +8,5 @@ QtObject{
     readonly property color onPrimary: "{{colors.on_primary.default.hex}}"
     readonly property color primaryColor: "{{colors.primary.default.hex}}"
     readonly property color errorColor: "{{colors.error.default.hex}}"
+    readonly property color secondaryColor: "{{colors.secondary.default.hex}}"
 }
