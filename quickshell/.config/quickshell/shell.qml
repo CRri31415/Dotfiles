@@ -16,7 +16,7 @@ PanelWindow{
         right: true
     }
     
-    implicitHeight: isExpanded ? 300 : 40
+    implicitHeight: isExpanded ? 300 : 32
     color: "transparent"
     
     WlrLayershell.layer: WlrLayer.Top
@@ -44,7 +44,7 @@ PanelWindow{
         clip: true
 
         implicitWidth: root.isExpanded ? expandedContent.implicitWidth : collapsedLayout.implicitWidth
-        implicitHeight: root.isExpanded ? expandedContent.implicitHeight : 30
+        implicitHeight: root.isExpanded ? expandedContent.implicitHeight : 24
         radius: root.isExpanded ? 20 : 10
 
         Behavior on color {ColorAnimation {duration: 250}}
@@ -66,7 +66,7 @@ PanelWindow{
             gesturePolicy: TapHandler.WithinBounds
             
             onTapped: {
-                if (!root.isExpanded) {
+                    if (!root.isExpanded) {
                     root.isExpanded = true
                 }
             }
@@ -74,7 +74,8 @@ PanelWindow{
 
         ExpandedContent {
             id: expandedContent
-            anchors.fill: parent
+            anchors.top: parent.top
+            anchors.horizontalCenter: parent.horizontalCenter
             visible: root.isExpanded
         }
     }
@@ -90,7 +91,7 @@ PanelWindow{
         border.width: 0
 
         implicitWidth: workspaceRow.implicitWidth + 24
-        implicitHeight: 30
+        implicitHeight: 24
         radius: 5
         
         Behavior on implicitWidth {NumberAnimation {duration: 250; easing.type: Easing.OutCubic}}
@@ -105,8 +106,8 @@ PanelWindow{
                     required property var modelData
                     property bool isActive: Hyprland.focusedWorkspace === modelData
 
-                    implicitWidth: isActive ? 40 : 20
-                    implicitHeight: 20
+                    implicitWidth: isActive ? 32 : 16
+                    implicitHeight: 16
                     radius: 5
 
                     Behavior on implicitWidth {NumberAnimation {duration: 250; easing.type: Easing.OutQuad}}
@@ -121,7 +122,7 @@ PanelWindow{
                             return wsName.length > 0 ? wsName.charAt(0).toUpperCase() : ""
                         }
 
-                        font.pixelSize: 13
+                        font.pixelSize: 10
                         font.bold: isActive
                         color: Colors.surfaceColor
                         horizontalAlignment: Text.AlignMiddle

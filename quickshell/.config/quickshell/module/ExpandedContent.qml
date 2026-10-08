@@ -2,23 +2,52 @@ import QtQuick
 import QtQuick.Layouts
 import ".."
 
-Item{
+Item {
     id: root
+    property int currentIndex: 0
 
     function resetMain(){
-        stackLayout.currentIndex = 0
+        currentIndex = 0
     }
 
-    implicitWidth: 400
-    implicitHeight: 150
+    implicitWidth: {
+        switch (currentIndex) {
+            case 0: return mainViewPage.implicitWidth
+            case 1: return systemTrayPage.implicitWidth
+            return 100
+        }
+    }
     
-    StackLayout {
-        id: stackLayout
+    implicitHeight: {
+        switch (currentIndex) {
+            case 0: return mainViewPage.implicitHeight
+            case 1: return systemTrayPage.implicitHeight
+            return 100
+        }
+    }
+
+    MainView {
+        id:mainViewPage
         anchors.fill: parent
         anchors.margins: 16
-        currentIndex: 0
-
-        MainView{
+        onRequestTrayPage: {
+            currentIndex = 1
         }
+
+        opacity: root.currentIndex === 0 ? 1.0 : 0.0
+        visible: opacity > 0
+        onImplicitWidthChanged: console.log("[MainView] implicitWidth:", implicitWidth)
+        onImplicitHeightChanged: console.log("[MainView] implicitHeight:", implicitHeight)
+    }
+
+    SystemTrayPage {
+        id: systemTrayPage
+        anchors.fill: parent
+
+        opacity: root.currentIndex === 1 ? 1.0 : 0.0
+        visible: opacity > 0
+
+        onImplicitWidthChanged: console.log("[SystemTrayPage] implicitWidth:", implicitWidth)
+        onImplicitHeightChanged: console.log("[SystemTrayPage] implicitHeight:", implicitHeight)
     }
 }
