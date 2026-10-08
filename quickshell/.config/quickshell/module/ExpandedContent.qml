@@ -14,6 +14,7 @@ Item {
         switch (currentIndex) {
             case 0: return mainViewPage.implicitWidth
             case 1: return systemTrayPage.implicitWidth
+            case 2: return volumePage.implicitWidth
             return 100
         }
     }
@@ -22,22 +23,26 @@ Item {
         switch (currentIndex) {
             case 0: return mainViewPage.implicitHeight
             case 1: return systemTrayPage.implicitHeight
+            case 2: return volumePage.implicitHeight
             return 100
         }
     }
 
     MainView {
-        id:mainViewPage
+        id: mainViewPage
         anchors.fill: parent
         anchors.margins: 16
+        
         onRequestTrayPage: {
             currentIndex = 1
         }
 
+        onRequestVolumePage: {
+            currentIndex = 2
+        }
+
         opacity: root.currentIndex === 0 ? 1.0 : 0.0
         visible: opacity > 0
-        onImplicitWidthChanged: console.log("[MainView] implicitWidth:", implicitWidth)
-        onImplicitHeightChanged: console.log("[MainView] implicitHeight:", implicitHeight)
     }
 
     SystemTrayPage {
@@ -46,8 +51,13 @@ Item {
 
         opacity: root.currentIndex === 1 ? 1.0 : 0.0
         visible: opacity > 0
+    }
 
-        onImplicitWidthChanged: console.log("[SystemTrayPage] implicitWidth:", implicitWidth)
-        onImplicitHeightChanged: console.log("[SystemTrayPage] implicitHeight:", implicitHeight)
+    VolumePage {
+        id: volumePage
+        anchors.fill: parent
+
+        opacity: root.currentIndex === 2 ? 1.0 : 0.0
+        visible: opacity > 0
     }
 }
