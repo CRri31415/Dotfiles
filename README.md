@@ -12,18 +12,13 @@ ViegPhunt/Dotfiles
 - 터미널 : `kitty`
 - 쉘 : `zsh`
 - 에디터 : `Helix`
-- 상태 바 : `waybar`
+- 상태 바 : `quickshell`
 - 알림 서버 : `mako` (아직 뭐 안 건드렸음)
 - 런처 : `rofi`
 - 로그아웃 메뉴 : `wlogout`
 - 오디오 엔진 : `pipewire`
 - 브라우저 : `firefox`
 - 솔리테어 : `kpat`
-
-## 장치 정보
-일단 테스트는 VMware에서밖에 안 해봤음
-
-실컴에선 어떤 부분이 잘못될지 잘 모르겠는데 일단 유력한건 Wi-fi랑 블루투스등 대충 장치 관련된쪽
 
 # 마소는 들어라
 
