@@ -1,13 +1,13 @@
 *
 {
-	wallpaper-path: url("/home/user/dotfiles/wallpapers/kedr.png", height);
-	primary: #92cef6;
-	on-primary: #00344c;
-	secondary: #b6c9d8;
-	on-secondary: #21323e;
-	surface: #101417;
-	on-surface: #dfe3e7;
-	tertiary: #ccc0e9;
-	on-tertiary: #342b4b;
-	outline: #8b9198;
+	wallpaper-path: url("/tmp/current-wallpaper", height);
+	primary: #81d3df;
+	on-primary: #00363c;
+	secondary: #b1cbcf;
+	on-secondary: #1c3438;
+	surface: #0e1415;
+	on-surface: #dee4e4;
+	tertiary: #b9c6ea;
+	on-tertiary: #23304d;
+	outline: #899294;
 }

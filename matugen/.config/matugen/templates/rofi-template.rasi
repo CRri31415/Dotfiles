@@ -1,6 +1,6 @@
 *
 {
-	wallpaper-path: url("{{image}}", height);
+	wallpaper-path: url("/tmp/current-wallpaper", height);
 	primary: {{colors.primary.default.hex}};
 	on-primary: {{colors.on_primary.default.hex}};
 	secondary: {{colors.secondary.default.hex}};

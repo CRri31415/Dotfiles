@@ -13,13 +13,6 @@ hl.env("QT_IM_MODULE","fcitx")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 hl.env("XDG_DATA_DIRS", home .. "/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/share:/usr/local/share")
 
--- hl.env("HYPRCURSOR_THEME", "Tachyon")
--- hl.env("HYPRCURSOR_SIZE", "32")
-
-
--- For VMware
--- hl.env("LIBGL_ALWAYS_SOFTWARE","1")
-
 local terminal = "kitty"
 local fileManager = "dolphin"
 local browser = "firefox"
@@ -36,7 +29,6 @@ local run_menu = customScript .. "run-launcher.sh"
 hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
   hl.exec_cmd("dbus-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-  hl.exec_cmd("waybar")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("mako")
   hl.exec_cmd("awww-daemon")
@@ -44,6 +36,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("wl-paste --type text --watch cliphist store")
   hl.exec_cmd("wl-paste --type image --watch cliphist store")
   hl.exec_cmd("sleep 1 && " .. customScript .. "wallpaper-random.sh")
+  hl.exec_cmd("quickshell")
 end)
 
 local colors = require("colors")
