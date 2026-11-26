@@ -1,0 +1,65 @@
+@import "colors.css";
+
+*
+{
+
+  border: none;
+  border-radius: 0;
+  font-family: "JuliaMono Nerd Font", monospace;
+  font-size: 13px;
+  min-height: 0;
+  transition: all 0.5s cubic-bezier(0.0,.75,.3,1.1);
+}
+
+window#waybar
+{
+  background-color: transparent;
+  color: transparent;
+  border-bottom: transparent;
+}
+
+#workspaces,
+#clock,
+#pulseaudio,
+#cpu,
+#memory,
+#tray,
+#idle_inhibitor,
+#privacy,
+#battery,
+#network,
+#custom-player,
+#custom-power,
+#custom-maxtemp
+{
+  background-color: @on_secondary;
+  color: @on_surface;
+  padding: 4px 8px;
+  margin: 4px 4px;
+  border-radius: 9999px;
+}
+
+#workspaces button
+{
+  padding: 0 5px;
+  color: @on_surface;
+  border-radius: 8px;
+}
+
+#workspaces button.active
+{
+  color: @on_primary;
+  background-color: @primary;
+  border-radius: 8px;
+}
+
+#cpu
+{
+  min-width: 70px;
+}
+
+#memory
+{
+  min-width: 90px;
+}
+

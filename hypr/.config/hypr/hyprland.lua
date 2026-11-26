@@ -1,0 +1,227 @@
+hl.monitor({
+  output = "",
+  mode = "preferred",
+  position = "auto",
+  scale = "auto"
+})
+
+local home = os.getenv("HOME")
+
+hl.env("XMODIFIERS","@im=fcitx")
+hl.env("QT_IM_MODULE","fcitx")
+--hl.env("GTK_IM_MODULE","fcitx")
+hl.env("MOZ_ENABLE_WAYLAND", "1")
+hl.env("XDG_DATA_DIRS", home .. "/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/share:/usr/local/share")
+
+local terminal = "kitty"
+local fileManager = "dolphin"
+local browser = "firefox"
+
+local customScript = home .. "/dotfiles/custom-script/"
+
+local menu = customScript .. "app-launcher.sh"
+local wallpaper_launcher = customScript .. "wallpaper.sh"
+local clipboard = customScript .. "clipboard.sh"
+local emoji = customScript .. "emoji.sh"
+local window_tab = customScript .. "window.sh"
+local run_menu = customScript .. "run-launcher.sh"
+
+hl.on("hyprland.start", function()
+  hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("dbus-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+  hl.exec_cmd("hypridle")
+  hl.exec_cmd("mako")
+  hl.exec_cmd("awww-daemon")
+  hl.exec_cmd("fcitx5 -d --replace")
+  hl.exec_cmd("wl-paste --type text --watch cliphist store")
+  hl.exec_cmd("wl-paste --type image --watch cliphist store")
+  hl.exec_cmd("sleep 1 && " .. customScript .. "wallpaper-random.sh")
+  hl.exec_cmd("quickshell")
+end)
+
+local colors = require("colors")
+
+hl.config({
+  general = {
+    gaps_in = 0,
+    gaps_out = {top=32, right=0, bottom=0, left=0},
+
+    border_size = 2,
+
+    col = {
+      active_border = colors.outline,
+      inactive_border = colors.outline_variant,
+    },
+
+    
+    resize_on_border = true,
+
+    allow_tearing = true,
+
+    layout = "dwindle",
+  },
+
+  decoration = {
+    rounding = 8,
+    rounding_power = 3,
+
+    active_opacity = 1.0,
+    inactive_opacity = 0.7,
+
+    shadow = {
+      enabled = true,
+      range = 2,
+      render_power = 1,
+
+      color = colors.shadow,
+    },
+
+    blur = {
+      enabled = true,
+      size = 4,
+      passes = 2,
+      brightness = 1.3,
+      contrast = 1.05,
+      vibrancy = 0.1,
+      
+      xray = false,
+      ignore_opacity = true,
+    },
+    
+  },
+
+  animations = {
+    enabled = true,
+  },
+})
+
+hl.layer_rule({match = {namespace = "logout_dialog"}, blur = true})
+
+hl.curve("ease", {type = "bezier", points = {{0.37, 0.06}, {0.5, 1.0}}})
+hl.curve("softPop", {type = "bezier", points = {{0.1, 0.6}, {0.2, 1.1}}})
+hl.curve("hardPop", {type = "bezier", points = {{0.0, 0.75}, {0.3, 1.1}}})
+hl.curve("linear", {type = "bezier", points = {{1,1}, {1,1}}})
+
+hl.animation({leaf = "global", enabled = true, speed = 10, bezier = "ease"})
+hl.animation({leaf = "windowsIn", enabled = true, speed = 4.5, bezier = "softPop", style = "popin 87%"})
+hl.animation({leaf = "windowsOut", enabled = true, speed = 1.5, bezier = "hardPop", style = "popin 87%"})
+hl.animation({leaf = "windows", enabled = true, speed = 3.5, bezier = "ease"})
+hl.animation({leaf = "fade", enabled = true, speed = 4.0, bezier = "ease"})
+hl.animation({leaf = "fadeIn", enabled = true, speed = 1.5, bezier = "ease"})
+hl.animation({leaf = "fadeOut", enabled = true, speed = 1.5, bezier = "ease"})
+hl.animation({leaf = "layers", enabled = true, speed = 1.5, bezier = "hardPop"})
+hl.animation({leaf = "workspaces", enabled = true, speed = 1.5, bezier = "ease", style = "slidefade"})
+hl.animation({leaf = "zoomFactor", enabled = true, speed = 7, bezier = "hardPop"})
+
+hl.config({
+  dwindle = {
+    preserve_split = true,
+  },
+})
+
+hl.config({
+  misc = {
+    vrr = 1,
+
+    disable_hyprland_logo = true,
+    disable_splash_rendering = true,
+    force_default_wallpaper = 0,
+
+    mouse_move_enables_dpms = false,
+    key_press_enables_dpms = true,
+    focus_on_activate = true,
+
+    middle_click_paste = false,
+
+    initial_workspace_tracking = 1,
+  },
+})
+
+hl.config({
+  input = {
+    kb_layout = "us",
+    kb_variant = "",
+    kb_model = "",
+    kb_options = "",
+    kb_rules = "",
+
+    follow_mouse = 1,
+
+    sensitivity = 0,
+    accel_profile = "flat",
+
+    repeat_delay = 500,
+    repeat_rate = 20,
+    
+    touchpad = {
+      natural_scroll = false,
+      tap_to_click = true,
+    },
+  },
+})
+
+hl.gesture({
+  fingers = 3,
+  direction = "horizontal",
+  action = "workspace"
+})
+
+local mainMod = "SUPER"
+
+hl.bind(mainMod .. " + SLASH", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(run_menu))
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd(window_tab))
+hl.bind(mainMod .. " + PERIOD", hl.dsp.exec_cmd(emoji))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(wallpaper_launcher))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+
+local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+
+hl.bind(mainMod .. " + F", hl.dsp.window.float({action = "toggle"}))
+hl.bind(mainMod .. " + S", hl.dsp.window.pseudo())
+
+hl.bind(mainMod .. " + left", hl.dsp.focus({direction = "left"}))
+hl.bind(mainMod .. " + right", hl.dsp.focus({direction = "right"}))
+hl.bind(mainMod .. " + up", hl.dsp.focus({direction = "up"}))
+hl.bind(mainMod .. " + down", hl.dsp.focus({direction = "down"}))
+
+for i = 1, 5 do
+  hl.bind(mainMod .. " + " .. i, hl.dsp.focus({workspace = i}))
+  hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({workspace = i}))
+end
+
+hl.bind(mainMod .. " + SHIFT + 6", hl.dsp.window.move({workspace = 6}))
+
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("slurp | grim -g - - | tee ~/main/05_미디어/00_스크린샷/$(date +%s).png | wl-copy"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("wl-paste"))
+
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), {mouse = true})
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), {mouse = true})
+
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({workspace = "e+1"}))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({workspace = "e-1"}))
+
+hl.window_rule({
+  name = "fix-xwayland-drag",
+  match = {
+    class = "^$",
+    title = "^$",
+    xwayland = true,
+    float = true,
+    fullscreen = false,
+    pin = false,
+  },
+
+  no_focus = true,
+})
+
+for i = 1, 5 do
+  hl.workspace_rule({workspace = i, persistent = true})
+end
+
+hl.workspace_rule({workspace = 6, persistent = false, monitor = "HDMI-A-1"})

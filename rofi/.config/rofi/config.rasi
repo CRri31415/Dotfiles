@@ -1,0 +1,203 @@
+@import "colors.rasi"
+
+configuration
+{
+	modi: "window,run,drun,emoji";
+	display-window: "Windows";
+	display-run: "Run";
+	display-drun: "App";
+	display-emoji: "Emoji";
+	scroll-method: 1;
+	show-icons: true;
+	drun-display-format: "{icon} {name}";
+}
+
+*
+{
+	font: "JuliaMono Nerd Font 13";
+}
+
+#window
+{
+	transparency: "real";
+	background-color: @on-primary;
+	border-color: @outline;
+	border: 2px solid;
+	border-radius: 16px;
+	spacing: 0px;
+	padding: 0px;
+	width: 1000px;
+}
+
+#mainbox
+{
+	background-image: @wallpaper-path;
+	spacing: 0px;
+	background-color: transparent;
+	orientation: horizontal;
+	children: ["leftbox", "rightbox"];
+}
+
+#leftbox
+{
+	padding: 16px;
+	background-color: transparent;
+	orientation: vertical;
+	children: ["search-bar", "dummy", "mode-switcher"];
+}
+
+#search-bar
+{
+	spacing: 8px;
+	padding: 10px 12px;
+	border-radius: 8px;
+	background-color: @primary;
+	text-color: @surface;
+	expand: false;
+	children: ["search-icon", "entry"];
+}
+
+#search-icon
+{
+	expand: false;
+	background-color: inherit;
+	text-color: inherit;
+	str: "";
+}
+
+#entry
+{
+	background-color: inherit;
+	text-color: inherit;
+	placeholder: "Search";
+	cursor: text;
+	vertical-align: 0.5;
+}
+
+#dummy
+{
+	background-color: transparent;
+}
+
+#mode-switcher
+{
+	spacing: 16px;
+	background-color: transparent;
+	text-color: @primary;
+}
+button
+{
+	padding: 8px;
+	border-radius: 8px;
+	background-color: @on-secondary;
+	text-color: inherit;
+}
+button selected
+{
+	background-color: @secondary;
+	text-color: @on-primary;
+}
+
+#rightbox
+{
+	padding: 16px;
+	background-color: @on-primary;
+	orientation: vertical;
+	children: ["message", "listview"];
+}
+
+#listview
+{
+	columns: 1;
+	lines: 8;
+	cycle: true;
+	dynamic: true;
+	scrollbar: false;
+	layout: vertical;
+	fixed-height: true;
+	fixed-columns: true;
+	spacing: 16px;
+	border-color: transparent;
+	border: 0px;
+	background-color: transparent;
+	text-color: @on-surface;
+	cursor: pointer;
+}
+element
+{
+	spacing: 8px;
+	padding: 4px;
+	border-radius: 8px;
+	background-color: transparent;
+	text-color: @on-surface;
+	cursor: pointer;
+}
+element normal.normal,
+element alternate.normal
+{
+	text-color: inherit;
+	background-color: inherit;
+}
+element normal.urgent,
+element alternate.urgent
+{
+	text-color: inherit;
+	background-color: @tertiary;
+}
+element normal.active,
+element alternate.active
+{
+	text-color: inherit;
+	background-color: @primary;
+}
+element selected.normal
+{
+	text-color: @on-secondary;
+	background-color: @primary;
+}
+element selected.urgent
+{
+	text-color: @on-secondary;
+	background-color: @tertiary;
+}
+element selected.active
+{
+	text-color: @on-secondary;
+	background-color: @tertiary;
+}
+element-icon
+{
+	background-color: transparent;
+	text-color: inherit;
+	size: 32px;
+}
+element-text
+{
+	background-color: transparent;
+	text-color: inherit;
+	vertical-align: 0.5;
+	horizontal-align: 0.0;
+}
+
+#message
+{
+	background-color: transparent;
+	border: 0px;
+	border-color: transparent;
+}
+textbox
+{
+	padding: 8px;
+	border-radius: 8px;
+	horizontal-align: 0.0;
+	vertical-align: 0.5;
+	background-color: @on-primary;
+	text-color: @on-surface;
+}
+error-message
+{
+	padding: 8px;
+	border-radius: 8px;
+	background-color: @on-primary;
+	text-color: @on-surface;
+}

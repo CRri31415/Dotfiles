@@ -1,0 +1,30 @@
+@import "../../.config/waybar/colors.css";
+
+*
+{
+  background-image: none;
+  box-shadow: none;
+  font-family: "JuliaMono Nerd Font";
+  font-size: 20px;
+}
+
+window
+{
+  background-color: rgba(37, 37, 37, 0.4);
+}
+
+button
+{
+  border-radius: 16px;
+  margin: 16px;
+  color: @secondary;
+  border-color: transparent;
+  background-color: alpha(@on_primary, 0.5);
+}
+
+button:hover
+{
+  background-color: @primary;
+  color: @on_secondary;
+  transition: all 0.5s cubic-bezier(0.0,.75,.3,1.1);
+}

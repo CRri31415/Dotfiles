@@ -1,0 +1,13 @@
+*
+{
+	wallpaper-path: url("/tmp/current-wallpaper", height);
+	primary: #80d5d4;
+	on-primary: #003737;
+	secondary: #b0cccb;
+	on-secondary: #1b3434;
+	surface: #0e1514;
+	on-surface: #dde4e3;
+	tertiary: #b3c8e8;
+	on-tertiary: #1c314b;
+	outline: #889392;
+}
